@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <header class="encabezado"> 
+        <img src="./Assets/Logo.png" alt="Alura Latam">
+    </header>
+
+    <h1 class="presentacion__titulo">Encriptador de Texto</h1>
+
+    <main>
+        <section class="presentacion__contenido">
+            <textarea id="inputText" placeholder="Ingresa tu texto aquí"></textarea>
+            <div>
+                <h6 class="informacion">
+                    <img src="./Assets/bi_exclamation-circle-fill.png" alt="signo de exclamacion">
+                    Sólo letras minúsculas y sin acentos
+                </h6>
+            </div>
+
+            <div>
+                <button id="encryptBtn">Encriptar</button>
+                <button id="decryptBtn">Desencriptar</button>
+          
+                <textarea id="outputText" readonly placeholder="El resultado aparecerá aquí"></textarea>
+              </section>
+      
+              <section class="desencriptador">
+                  <div>
+                      <button class="botones__copiar" onclick="btncopiar()">Copiar</button>
+                  </div>
+              </section>
+          </main>
+      
+          <script>
+              // Función para encriptar el texto
+              function encriptarTexto(texto) {
+                  return texto
+                      .replace(/e/g, "enter")
+                      .replace(/i/g, "imes")
+                      .replace(/a/g, "ai")
+                      .replace(/o/g, "ober")
+                      .replace(/u/g, "ufat");
+              }
+      
+              // Función para desencriptar el texto
+              function desencriptarTexto(texto) {
+                  return texto
+                      .replace(/enter/g, "e")
+                      .replace(/imes/g, "i")
+                      .replace(/ai/g, "a")
+                      .replace(/ober/g, "o")
+                      .replace(/ufat/g, "u");
+              }
+      
+              // Obtener referencias a los elementos del DOM
+              const inputText = document.getElementById("inputText");
+              const outputText = document.getElementById("outputText");
+              const mensajeFinal = document.getElementById("mensajeFinal");
+      
+              // Manejar el evento del botón "Encriptar"
+              document.getElementById("encryptBtn").addEventListener("click", function() {
+                  const texto = inputText.value;
+                  const textoEncriptado = encriptarTexto(texto);
+                  outputText.value = textoEncriptado;
+                  mensajeFinal.value = textoEncriptado; // Mostrar en la sección de "desencriptador"
+              });
+      
+              // Manejar el evento del botón "Desencriptar"
+              document.getElementById("decryptBtn").addEventListener("click", function() {
+                  const texto = inputText.value;
+                  const textoDesencriptado = desencriptarTexto(texto);
+                  outputText.value = textoDesencriptado;
+                  mensajeFinal.value = textoDesencriptado; // Mostrar en la sección de "desencriptador"
+              });
+      
+              // Función para copiar el texto al portapapeles
+              function btncopiar() {
+                  mensajeFinal.select();
+                  document.execCommand("copy");
+              }
+          </script>
+              <footer class="footer">
+                      <p>
+                         © 2024 Desarrollado por Tania Ramirez 
+                          <a href="https://github.com/" target="_blank">
+                              <img src="./Assets/github.png" alt="GitHub" class="footer__icon">
+                          </a>
+                          <a href="https://www.linkedin.com/in/tania-ram%C3%ADrez-%C3%A1lvarez-66b451251/" target="_blank">
+                              <img src="./Assets/linkedin.png" alt="LinkedIn" class="footer__icon">
+                          </a>
+                      </p>
+                  </footer>
+      
+      </body>
+      </html>
+
+        

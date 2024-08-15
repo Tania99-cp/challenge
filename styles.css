@@ -1,0 +1,141 @@
+/* Estilos Generales */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-image: url(./Assets/6839384.jpg);
+  background-size: cover; /* Asegura que la imagen de fondo cubra toda la pantalla */
+  background-position: center;
+  background-attachment: fixed; /* Mantiene la imagen de fondo fija mientras se desplaza */
+}
+
+/* Título principal */
+.presentacion__titulo {
+  font-size: 36px;
+  color: #ff6699; /* Rosado oscuro para el título */
+  margin-top: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra para destacar el título */
+}
+
+/* Estilo de los Textareas */
+textarea {
+  width: 100%;
+  max-width: 500px; /* Máximo ancho en pantallas grandes */
+  height: 150px;
+  margin: 10px 0;
+  padding: 15px;
+  font-size: 18px;
+  background-color: #fff;
+  border: 2px solid #ff6699;
+  border-radius: 10px; /* Bordes redondeados */
+  color: #333;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar un efecto de elevación */
+  transition: all 0.3s ease; /* Suaviza los cambios al hacer hover */
+}
+
+textarea:focus {
+  border-color: #ff3366; /* Cambia el color del borde al enfocar */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Aumenta la sombra al enfocar */
+}
+
+/* Estilo de los Botones */
+button {
+  margin: 10px;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #ff6699;
+  color: #fff;
+  border: none;
+  border-radius: 25px; /* Bordes completamente redondeados para un estilo de botón moderno */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff3366;
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño al hacer hover */
+}
+
+/* Estilo del Footer */
+.footer {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  background-color: #000000; /* Fondo negro */
+  border-top: 5px solid #ff69b4; /* Borde rosado en la parte superior */
+  color: #ff69b4; /* Texto en color rosado */
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.footer p {
+      margin: 0;
+}
+
+.footer__icon {
+      width: 24px; /* Tamaño de los íconos */
+      height: 24px;
+      margin-left: 10px; /* Espacio entre el nombre y los íconos */
+      vertical-align: middle; /* Alinea los íconos al centro del texto */
+      transition: transform 0.3s ease;
+}
+
+  .footer__icon:hover {
+      transform: scale(1.2); /* Aumenta el tamaño del icono al hacer hover */
+  }
+
+
+/* Media Query para Pantallas Grandes */
+@media (min-width: 768px) {
+  .presentacion__titulo {
+      font-size: 48px;
+  }
+
+  textarea {
+      max-width: 600px;
+      height: 200px;
+      font-size: 20px;
+  }
+
+  button {
+      padding: 15px 30px;
+      font-size: 20px;
+  }
+
+  .footer {
+      padding: 40px;
+      font-size: 20px;
+  }
+}
+
+/* Media Query para Pantallas Pequeñas (Móviles) */
+@media (max-width: 480px) {
+  .presentacion__titulo {
+      font-size: 28px;
+  }
+
+  textarea {
+      height: 120px;
+      font-size: 16px;
+  }
+
+  button {
+      padding: 10px 20px;
+      font-size: 16px;
+  }
+
+  .footer {
+      padding: 15px;
+      font-size: 16px;
+  }
+}
